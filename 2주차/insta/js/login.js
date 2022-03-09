@@ -1,28 +1,18 @@
-const inputEmail = document.querySelector(".login__email");
-const inputPassWord = document.querySelector(".login__pw");
-const btn = document.querySelector(".login__btn");
+// 유효성검사 추가
+const loginForm = document.querySelector(".login");
 
-//로그인 기능 활성화
-function handleLogin() {
-  switch (!(inputEmail.value && inputPassWord.value)) {
-    case true:
-      btn.disable = true;
-      btn.style.backgroundColor = "#c4e1fb";
-      btn.style.cursor = "default";
-      break;
-    case false:
-      btn.disable = false;
-      btn.style.backgroundColor = "#0595f6";
-      btn.style.cursor = "pointer";
-      break;
+loginForm.addEventListener("keyup", () => {
+  const loginBtn = document.querySelector(".login__btn");
+  const loginEmail = document.querySelector(".login__email").value;
+  const loginPassWord = document.querySelector(".login__pw").value;
+
+  if (loginEmail.indexOf("@") >= 0 && loginPassWord.length >= 5) {
+    loginBtn.disable = false;
+    loginBtn.style.backgroundColor = "#0595f6";
+    loginBtn.style.cursor = "pointer";
+  } else if (!loginEmail || loginPassWord < 5) {
+    loginBtn.disable = true;
+    loginBtn.style.backgroundColor = "#c4e1fb";
+    loginBtn.style.cursor = "default";
   }
-}
-
-inputEmail.addEventListener("keydown", handleLogin);
-inputPassWord.addEventListener("keydown", handleLogin);
-
-function handleBtn() {
-  console.log("hi");
-}
-
-btn.addEventListener("click", handleBtn);
+});

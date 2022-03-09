@@ -53,7 +53,7 @@
   border: 4px solid #0595f6;
 }
 
-button {
+.login__btn {
   background-color: #c4e1fb;
   border: none;
   height: 50px;
