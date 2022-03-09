@@ -69,7 +69,6 @@
   border: 2px solid var(--color-grey);
   width: 65%;
   height: 45%;
-  /* position: relative; */
   background-color: #fafafa;
 }
 
@@ -123,7 +122,6 @@
   left: 30%;
   transform: translate(-30%, 0);
   width: 500px;
-  /* height: 740px; */
   border: none;
   display: flex;
   justify-content: center;
@@ -333,8 +331,12 @@
 /* 모두보기 */
 .main-right__allstory {
   border: 2px solid rgba(0, 0, 0, 0.1);
-  overflow-y: hidden;
+  overflow-y: scroll;
   height: 180px;
+}
+
+.main-right__allstory::-webkit-scrollbar {
+  display: none;
 }
 
 .main-right__title {
@@ -382,7 +384,8 @@
   justify-content: start;
 }
 
-.feedscontent__comment--greeting > .fa-regular {
+.feedscontent__comment--greeting > .fa-regular,
+.feedscontent__comment--greeting > .fa-solid {
   position: absolute;
   right: 30px;
   font-size: 20px;
@@ -400,4 +403,19 @@
 
 .feedscontent__comment li {
   margin: 10px 0;
+}
+
+/* 반응형 웹사이트 구현 */
+
+@media only screen and (max-width: 1400px) {
+  .main-right {
+    display: none;
+  }
+
+  .feeds {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
