@@ -11,7 +11,7 @@
     <div class="wrap wrap-main">
       <nav class="status-bar">
         <div class="status-bar__logo">
-          <img src="img/instagram.png" />
+          <a href="login.html"><img src="img/instagram.png" /></a>
           <div class="status-bar__logo--stick">|</div>
           <span>westagram</span>
         </div>
@@ -24,6 +24,34 @@
             <img src="img/compass.png" />
             <img src="img/heart.png" />
             <img src="img/profile.png" />
+          </div>
+        </div>
+        <div class="profile hidden">
+          <div class="profile__profile">
+            <div>
+              <i class="fa-solid fa-user fa-sm"></i>
+            </div>
+            <span>Profile</span>
+          </div>
+          <div class="profile__profile">
+            <div>
+              <i class="fa-solid fa-bookmark fa-sm"></i>
+            </div>
+            <span>Saved</span>
+          </div>
+
+          <div class="profile__profile">
+            <div>
+              <i class="fa-solid fa-gear fa-sm"></i>
+            </div>
+            <span>Settings</span>
+          </div>
+
+          <div class="profile__profile">
+            <div>
+              <i class="fa-solid fa-arrow-right-to-bracket fa-sm"></i>
+            </div>
+            <span>Log out</span>
           </div>
         </div>
       </nav>
@@ -72,6 +100,7 @@
                 class="feedscomment__input"
                 type="text"
                 placeholder="댓글 달기..."
+                maxlength="50"
               />
               <button class="feedscomment__btn">게시</button>
             </form>

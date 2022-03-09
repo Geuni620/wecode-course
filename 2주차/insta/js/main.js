@@ -1,4 +1,3 @@
-// fa-regular -> fa-solid
 const commentForm = document.querySelector(".feedscomment");
 const commentInput = document.querySelector(".feedscomment__input");
 const commentList = document.querySelector(".feedscontent__comment");
@@ -50,8 +49,25 @@ commentForm.addEventListener("submit", (event) => {
 });
 
 // nav 프로필 사진 클릭 시 메뉴 박스 생성
-const mypageIcon = document.querySelector(".status-bar__mypage img:last-child");
+const mypageIcon = document.querySelector(".status-bar__icon img:last-child");
+const profile = document.querySelector(".profile");
 
 mypageIcon.addEventListener("click", (event) => {
-  console.log("hi");
+  profile.classList.toggle("hidden");
 });
+
+const closeMenu = (event) => {
+  // console.log(mypageIcon.classList);
+  // console.log(event.target);
+  if (event.target !== mypageIcon) {
+    profile.classList.add("hidden");
+  }
+};
+
+/*
+mypageIcon.addEventListener("click", (event) => {
+  const profile = document.querySelector(".profile");
+  profile.classList.toggle("hidden");
+});
+*/
+window.addEventListener("click", closeMenu);

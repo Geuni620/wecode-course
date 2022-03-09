@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
 }
-.status-bar__logo > img {
+.status-bar__logo img {
   width: 25px;
   height: 25px;
 }
@@ -418,4 +418,45 @@
     left: 50%;
     transform: translate(-50%, 0);
   }
+}
+/* profile 구현 */
+.profile {
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 200px;
+  position: absolute;
+  right: 10%;
+  top: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__profile {
+  font-size: 20px;
+  display: flex;
+  padding: 10px 10px 2px 25px;
+  transition: 0.2s ease-in-out;
+}
+
+.profile__profile:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.profile__profile > span {
+  margin-left: 10px;
+}
+
+.profile__profile:nth-child(3),
+.profile__profile:nth-child(3) > span {
+  transform: translate(-2px);
+}
+
+.hidden {
+  display: none;
+}
+
+.status-bar__icon img:last-child {
+  cursor: pointer;
 }
