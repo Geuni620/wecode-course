@@ -2,6 +2,7 @@ const commentForm = document.querySelector(".feedscomment");
 const commentInput = document.querySelector(".feedscomment__input");
 const commentList = document.querySelector(".feedscontent__comment");
 
+// 댓글기능 구현
 function paintComment(comment) {
   const ul = document.querySelector(".feedscontent__comment");
   const li = document.createElement("li");
@@ -22,7 +23,6 @@ function paintComment(comment) {
   div.appendChild(btn);
   div.prepend(span);
   li.appendChild(div);
-
   ul.appendChild(li);
 
   // 삭제기능 구현
@@ -31,6 +31,7 @@ function paintComment(comment) {
     btn.remove();
   });
 
+  // 좋아요기능 구현
   icon.addEventListener("click", (event) => {
     const REGULAR = "fa-regular";
     const SOLID = "fa-solid";
@@ -57,17 +58,9 @@ mypageIcon.addEventListener("click", (event) => {
 });
 
 const closeMenu = (event) => {
-  // console.log(mypageIcon.classList);
-  // console.log(event.target);
   if (event.target !== mypageIcon) {
     profile.classList.add("hidden");
   }
 };
 
-/*
-mypageIcon.addEventListener("click", (event) => {
-  const profile = document.querySelector(".profile");
-  profile.classList.toggle("hidden");
-});
-*/
 window.addEventListener("click", closeMenu);
