@@ -14,9 +14,9 @@ function Login() {
   let [inputs, setInputs] = useState({
     id: "",
     pw: "",
-    isActive: false,
   });
 
+  let [isActive, isActiveChange] = useState(false);
   // const handleIdInput = (e) => {
   //   let newObj = { ...inputs };
   //   newObj["id"] = e.target.value;
@@ -39,17 +39,13 @@ function Login() {
   console.log(inputs);
 
   //유효성 검토
-  const activeBtn = (e) => {
-    console.log(e);
-  };
-  const unactiveBtn = (e) => {
-    console.log(e);
+  const checkValid = (e) => {
+    inputs.id.includes("@") && inputs.pw.length >= 5
+      ? isActiveChange(true)
+      : isActiveChange(false);
   };
 
-  const checkValid = (e) => {
-    let isActive = false;
-    isActive === true ? activeBtn() : unactiveBtn();
-  };
+  //
 
   return (
     <div className="wrap">
@@ -69,7 +65,11 @@ function Login() {
           onChange={handlePwInput}
           onKeyUp={checkValid}
         />
-        <button className="login__btn" type="button" onClick={gotomain}>
+        <button
+          className={isActive ? "active" : null}
+          type="button"
+          onClick={gotomain}
+        >
           로그인
         </button>
       </form>
