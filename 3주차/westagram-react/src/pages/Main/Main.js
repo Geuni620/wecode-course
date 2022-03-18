@@ -4,6 +4,23 @@ import "./Main.scss";
 // icon
 function Main() {
   // 댓글달기 기능 구현
+  let [commentInput, setCommentInput] = useState([""]);
+  let [inputValue, setInputValue] = useState("");
+
+  // 댓글 입력 기능 구현
+  const handleCommentInput = (e) => {
+    setInputValue(e.target.value);
+
+    // console.log(inputValue);
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+
+    // let copy = [...commentInput];
+    // copy.push(inputValue);
+    // setCommentInput(copy);
+  };
 
   return (
     <div className="wrap-main">
@@ -91,17 +108,25 @@ function Main() {
                 <span>그니당</span>님 <span>외 10명</span>이 좋아합니다.
               </div>
               <div className="feedscontent__like-text">
-                <ul className="feedscontent__comment"></ul>
+                <ul className="feedscontent__comment">
+                  {commentInput.map((inputComment, i) => {
+                    return <li key={i}>{inputComment}</li>;
+                  })}
+                </ul>
               </div>
             </div>
-            <form className="feedscomment">
+            <form className="feedscomment" onSubmit={handleCommentSubmit}>
               <input
                 className="feedscomment__input"
                 type="text"
                 placeholder="댓글 달기..."
                 maxLength="50"
+                value={comment}
+                onChange={handleCommentInput}
               />
-              <button className="feedscomment__btn">게시</button>
+              <button className="feedscomment__btn" type="submit">
+                게시
+              </button>
             </form>
           </article>
         </div>
