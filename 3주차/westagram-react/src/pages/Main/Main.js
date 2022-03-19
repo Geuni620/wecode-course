@@ -4,22 +4,26 @@ import "./Main.scss";
 // icon
 function Main() {
   // 댓글달기 기능 구현
-  let [commentInput, setCommentInput] = useState([""]);
-  let [inputValue, setInputValue] = useState("");
+  let [comment, setComment] = useState([""]);
 
   // 댓글 입력 기능 구현
   const handleCommentInput = (e) => {
-    setInputValue(e.target.value);
+    setComment(e.target.value);
 
-    // console.log(inputValue);
+    console.log(typeof comment);
   };
 
+  let [commentArray, setCommentArray] = useState([""]);
   const handleCommentSubmit = (e) => {
     e.preventDefault();
+    setCommentArray((commentValueList) => [comment, ...commentValueList]);
+    setComment("");
 
     // let copy = [...commentInput];
     // copy.push(inputValue);
     // setCommentInput(copy);
+
+    // console.log(commentArray);
   };
 
   return (
@@ -109,8 +113,8 @@ function Main() {
               </div>
               <div className="feedscontent__like-text">
                 <ul className="feedscontent__comment">
-                  {commentInput.map((inputComment, i) => {
-                    return <li key={i}>{inputComment}</li>;
+                  {commentArray.map((input, i) => {
+                    return <li key={i}>{input}</li>;
                   })}
                 </ul>
               </div>
