@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Main.scss";
+import Comment from "../../components/Keun/Comment.js";
 
 // icon
 function Main() {
@@ -9,14 +10,12 @@ function Main() {
   // 댓글 입력 기능 구현
   const handleCommentInput = (e) => {
     setComment(e.target.value);
-
-    console.log(typeof comment);
   };
 
   let [commentArray, setCommentArray] = useState([""]);
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    setCommentArray((commentValueList) => [comment, ...commentValueList]);
+    setCommentArray((commentValueList) => [...commentValueList, comment]);
     setComment("");
 
     // let copy = [...commentInput];
@@ -114,8 +113,12 @@ function Main() {
               <div className="feedscontent__like-text">
                 <ul className="feedscontent__comment">
                   {commentArray.map((input, i) => {
-                    return <li key={i}>{input}</li>;
+                    return <Comment input={input} key={i} />;
                   })}
+
+                  {/* {commentArray.map((input, i) => {
+                    return <li key={i}>{input}</li>;
+                  })} */}
                 </ul>
               </div>
             </div>
