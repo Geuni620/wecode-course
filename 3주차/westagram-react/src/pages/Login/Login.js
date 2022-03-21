@@ -17,21 +17,10 @@ function Login() {
   });
 
   let [isActive, isActiveChange] = useState(false);
-  // const handleIdInput = (e) => {
-  //   let newObj = { ...inputs };
-  //   newObj["id"] = e.target.value;
-  //   setInputs(newObj);
-  // };
 
   const handleIdInput = (e) => {
     setInputs({ ...inputs, id: e.target.value });
   };
-
-  // const handlePwInput = (e) => {
-  //   let newObj = { ...inputs };
-  //   newObj["pw"] = e.target.value;
-  //   setInputs(newObj);
-  // };
 
   const handlePwInput = (e) => {
     setInputs({ ...inputs, pw: e.target.value });

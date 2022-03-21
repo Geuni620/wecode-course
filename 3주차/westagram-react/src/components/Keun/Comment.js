@@ -3,7 +3,13 @@ import React, { useState } from "react";
 function Comment(props) {
   return (
     <>
-      <li>{props.input}</li>
+      <div>
+        <li>
+          <span>{props.id}</span>
+          <span>{props.name}</span>
+          <span>{props.comment}</span>
+        </li>
+      </div>
     </>
   );
 }

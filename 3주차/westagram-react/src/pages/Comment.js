@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "./Main.scss";
-import Comment from "../../components/Keun/Comment";
-
-import COMMENT_LIST from "../commentData";
+import "./Main/Main";
+import Comment from "../components/Keun/Comment";
 
 // icon
 function Main() {
@@ -108,18 +106,8 @@ function Main() {
               </div>
               <div className="feedscontent__like-text">
                 <ul className="feedscontent__comment">
-                  {/* {commentArray.map((input, i) => {
+                  {commentArray.map((input, i) => {
                     return <Comment input={input} key={i} />;
-                  })} */}
-
-                  {COMMENT_LIST.map((comment) => {
-                    return (
-                      <Comment
-                        key={comment.id}
-                        name={comment.userName}
-                        comment={comment.content}
-                      />
-                    );
                   })}
                 </ul>
               </div>
