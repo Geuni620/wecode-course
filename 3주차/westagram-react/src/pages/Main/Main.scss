@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap");
+
+// 변수 및 함수지정
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$greyColor: rgba(0, 0, 0, 0.3);
+
+/* 전체 */
+.wrap-main {
+  position: absolute;
+  width: 100vw;
+}
+
+/* status-bar  */
+/* 좌측 */
+.status-bar {
+  display: flex;
+  background-color: white;
+  border: 1px solid #fafafa;
+  margin-bottom: 40px;
+  padding: 10px 0;
+}
+
+.status-bar__logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-family: "Lobster", cursive;
+    font-size: 23px;
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.status-bar__logo--stick {
+  width: 1px;
+  height: 15px;
+  background-color: black;
+  margin: 10px;
+}
+
+.status-bar__mypage {
+  flex: 1;
+}
+
+/* 중간 */
+.status-bar__search {
+  flex: 1;
+  @include flex();
+  position: relative;
+  color: $greyColor;
+
+  input {
+    width: 65%;
+    border: 2px solid $greyColor;
+    background-color: #fafafa;
+  }
+
+  input::placeholder {
+    text-align: center;
+    font-size: 13px;
+    color: $greyColor;
+  }
+
+  input:focus::placeholder {
+    text-align: left;
+  }
+
+  input:focus {
+    padding-left: 28px;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 54%;
+  }
+}
+
+// 이건 안먹힘!!!!
+.status-bar__search:focus-within i {
+  left: 20%;
+}
+
+/* 우측 */
+.status-bar__mypage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-bar__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  img:nth-child(2) {
+    margin: 0px 25px;
+  }
+}
+
+/* feeds작성 */
+.main {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.feeds {
+  @include flex();
+  position: absolute;
+  width: 500px;
+  top: 0;
+  left: 30%;
+  transform: translate(-30%, 0);
+  border: none;
+}
+
+.feedscontent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 470px;
+  top: 0;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.feedscontent__profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.feedscontent__topbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  span {
+    margin-left: 15px;
+    font-weight: 700;
+  }
+}
+
+.feedscontent__icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 10%;
+}
+
+.feedscontent__status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.feedscontent__img > img {
+  width: 100%;
+  height: 470px;
+}
+
+.feedscontent__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.feedscontent__left > img,
+.feedscontent__right > img {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+}
+
+.fa-regular {
+  color: black;
+}
+
+.feedscontent__left {
+  padding: 5px;
+}
+
+.feedscontent__like {
+  display: flex;
+  justify-items: start;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+.feedscontent__like-text {
+  margin: 6px 0;
+}
+
+.feedscontent__like-text--flex {
+  display: flex;
+  align-items: center;
+}
+
+.feedscontent__like-text > img {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.feedscontent__like-text span {
+  font-weight: 700;
+}
+
+.feedscontent__comment--greeting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedscontent__comment--greeting span {
+  margin-right: 5px;
+}
+
+.heartAndBox > i {
+  margin: 0px 5px;
+}
+
+/* 댓글 달기 */
+.feedscomment {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.feedscomment__input {
+  width: 90%;
+  border: none;
+  font-size: 15px;
+}
+
+.feedscomment__input::placeholder {
+  color: $greyColor;
+  padding: 20px;
+}
+
+.feedscomment__input:focus::placeholder {
+  color: transparent;
+}
+
+.feedscomment__btn {
+  border: none;
+  font-size: 15px;
+  background-color: transparent;
+  color: $greyColor;
+}
+
+.feedscomment__btn:hover {
+  cursor: pointer;
+}
+
+/* main-right */
+.main-right {
+  position: absolute;
+  top: 0;
+  left: 55%;
+}
+
+.main-right__mystory,
+.main-right__otherstory {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 40px 10px 10px;
+}
+
+.main-right__otherstory {
+  padding: 0px 40px 10px 10px;
+}
+
+.main-right__img > img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.main-right__img--xl > img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-left: 0px;
+}
+
+.main-right__text {
+  margin-left: 10px;
+
+  h3:first-child {
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  h3:last-child {
+    color: $greyColor;
+    font-weight: 500;
+  }
+}
+
+/* 모두보기 */
+.main-right__allstory {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 180px;
+  overflow-y: scroll;
+}
+
+.main-right__allstory::-webkit-scrollbar {
+  display: none;
+}
+
+.main-right__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+.main-right__recommend > .main-right__title {
+  padding-bottom: 0px;
+}
+
+.main-right__title :first-child {
+  color: $greyColor;
+}
+
+.main-right__recommend {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.main-right__follow > h3 {
+  font-weight: 700;
+  color: #71b4f4;
+}
+
+.main-right__otherstory--follow {
+  padding: 0;
+  padding: 10px 0px 0px 10px;
+}
+
+.main-right__otherstory--follow:last-child {
+  padding-bottom: 10px;
+}
+
+.main-right__follow {
+  margin-left: 5px;
+  transform: translate(-5px);
+}
+
+/* 댓글기능 구현 */
+.feedscontent__comment--greeting {
+  position: relative;
+  display: flex;
+  justify-content: start;
+}
+
+.feedscontent__comment--greeting > .fa-regular,
+.feedscontent__comment--greeting > .fa-solid {
+  position: absolute;
+  right: 30px;
+  font-size: 20px;
+}
+
+.feedscontent__comment--greeting > button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 20px;
+  transform: translateY(-2px);
+}
+
+.feedscontent__comment li {
+  margin: 10px 0;
+}
+
+/* 반응형 웹사이트 구현 */
+@media only screen and (max-width: 1400px) {
+  .main-right {
+    display: none;
+  }
+
+  .feeds {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* profile hidden구현 */
+.profile {
+  position: absolute;
+  width: 200px;
+  right: 10%;
+  top: 50px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 100;
+}
+
+.profile__setting {
+  padding: 10px 10px 2px 25px;
+  font-size: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+.profile__setting:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.profile__setting > span {
+  margin-left: 10px;
+}
+
+.profile__setting:nth-child(2),
+.profile__setting:nth-child(2) > span {
+  transform: translate(3px);
+}
+
+.hidden {
+  display: none;
+}
+
+.status-bar__icon img:last-child {
+  cursor: pointer;
+}

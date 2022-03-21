@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Main.scss";
-import Comment from "../../components/Keun/Comment.js";
+import Comment from "../../components/Keun/Comment";
 
 // icon
 function Main() {
@@ -15,7 +15,7 @@ function Main() {
   let [commentArray, setCommentArray] = useState([""]);
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    setCommentArray((commentValueList) => [...commentValueList, comment]);
+    setCommentArray((commentValue) => [...commentValue, comment]);
     setComment("");
 
     // let copy = [...commentInput];
@@ -115,10 +115,6 @@ function Main() {
                   {commentArray.map((input, i) => {
                     return <Comment input={input} key={i} />;
                   })}
-
-                  {/* {commentArray.map((input, i) => {
-                    return <li key={i}>{input}</li>;
-                  })} */}
                 </ul>
               </div>
             </div>
