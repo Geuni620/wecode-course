@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Main.scss";
 import Comment from "../../components/Keun/Comment";
 
-import COMMENT_LIST from "../commentData";
+// import COMMENT_LIST from "../commentData";
 
 // icon
 function Main() {
@@ -20,6 +20,18 @@ function Main() {
     setCommentArray((commentValue) => [...commentValue, comment]);
     setComment("");
   };
+
+  const [commentList, setCommentList] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET", // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then((res) => res.json())
+      .then((data) => {
+        setCommentList(data);
+      });
+  }, []);
 
   return (
     <div className="wrap-main">
@@ -112,7 +124,16 @@ function Main() {
                     return <Comment input={input} key={i} />;
                   })} */}
 
-                  {COMMENT_LIST.map((comment) => {
+                  {/* {COMMENT_LIST.map((comment) => {
+                    return (
+                      <Comment
+                        key={comment.id}
+                        name={comment.userName}
+                        comment={comment.content}
+                      />
+                    );
+                  })} */}
+                  {commentList.map((comment) => {
                     return (
                       <Comment
                         key={comment.id}
