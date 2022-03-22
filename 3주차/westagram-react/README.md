@@ -14,11 +14,11 @@
 
 ## :: 구현 목표 (해당 브랜치에서 구현하고자 하는 하나의 목표를 설정합니다.)
 
-[x] Mission 1) Login | 사용자 입력 데이터 저장  
-[x] Mission 2) Login | 로그인 버튼 활성화(Validation)  
-[x] Mission 3) Main | 댓글기능 구현  
-[x] Mission 4) Main | 댓글 컴포넌트화 + props로 데이터 전달  
-[x] Mission 5) Main | map 함수 적용시 key props를 부여하는 이유
+- [x] Mission 1) Login | 사용자 입력 데이터 저장
+- [x] Mission 2) Login | 로그인 버튼 활성화(Validation)
+- [x] Mission 3) Main | 댓글기능 구현
+- [x] Mission 4) Main | 댓글 컴포넌트화 + props로 데이터 전달
+- [x] Mission 5) Main | map 함수 적용시 key props를 부여하는 이유
 
 <br />
 
@@ -125,11 +125,11 @@ setPerson({...person, 변경할 key : newValue})
 
 **Login 로그인 버튼 활성화(Validation)**
 
-[ ] disabled 활성화 비활성화 기능 추가
+- [ ] disabled 활성화 비활성화 기능 추가
 
 **Main 댓글 기능**
 
-[ ] 배열이 아니라 객체형태로 key값(Id, 좋아요, 삭제 등)을 지정한 후 댓글기능 구현해보기  
-[ ] 재렌더링 되는 요소들 컨트롤해보기
+- [ ] 배열이 아니라 객체형태로 key값(Id, 좋아요, 삭제 등)을 지정한 후 댓글기능 구현해보기
+- [ ] 재렌더링 되는 요소들 컨트롤해보기
 
 - 재렌더링시 엄청 계산이 복잡한 함수가 있다고 가정하고 이 함수를 재렌더링 최소화 할 수 있는 코드 고민해보기
