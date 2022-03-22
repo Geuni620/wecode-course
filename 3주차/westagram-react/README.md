@@ -119,8 +119,6 @@ setPerson({...person, 변경할 key : newValue})
 
 ## :: 기타 질문 및 특이 사항
 
-### 특이 사항
-
 > 다음과 같은 기능을 더 추가하고 싶었으나, 하지못했음
 
 **Login 로그인 버튼 활성화(Validation)**
